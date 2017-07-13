@@ -1,4 +1,4 @@
 FROM microsoft/dotnet:runtime
 WORKDIR /dotnetapp
-COPY out .
+COPY PiApp/out .
 ENTRYPOINT ["dotnet", "dotnetapp.dll"]
