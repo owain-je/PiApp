@@ -1,3 +1,3 @@
 #!/bin/bash
-rake default
+rake 
 exit $?
