@@ -12,7 +12,7 @@ def get_env(env_name,default_value)
 end
 
 region = get_env('AWS_REGION',"eu-west-1")
-container_name = get_env('NAME',"PiApp")
+container_name = get_env('NAME',"piapp")
 aws_account = get_env('AWS_ACCOUNT',"1234567890")
 version = get_env('GO_PIPELINE_LABEL',"1.0")
 repository = get_env('REPOSITORY',"#{aws_account}.dkr.ecr.#{region}.amazonaws.com")
@@ -108,10 +108,6 @@ task :create_repo do
     end
   end
 end
-
-
-
-docker build -t dotnetapp .
 
 task :build do
    puts("Building #{base_tag}")
