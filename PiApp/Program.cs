@@ -18,6 +18,7 @@ namespace PiApp
                 .UseIISIntegration()
                 .UseStartup<Startup>()
                 .UseApplicationInsights()
+                .UseUrls("http://*:5001;")
                 .Build();
 
             host.Run();
