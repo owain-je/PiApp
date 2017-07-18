@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MySql.Data.MySqlClient;
-
+using Microsoft.Extensions.Configuration;
+using System.IO;
 
 namespace PiApp.Controllers
 {
@@ -26,9 +25,14 @@ namespace PiApp.Controllers
 
             try
             {
+                var p = Path.Combine(Directory.GetCurrentDirectory(), "config");
+                var builder = new ConfigurationBuilder().SetBasePath(p).AddJsonFile("appsettings.json");
+
+                var Configuration = builder.Build();
+
                 MySqlConnection connection = new MySqlConnection
                 {
-                    ConnectionString = "server=localhost;user id=piapp;password=1q2w3e4r;persistsecurityinfo=True;port=3306;database=piapp"
+                    ConnectionString = Configuration["connection"]
                 };
                 connection.Open();
                 
