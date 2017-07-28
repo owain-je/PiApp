@@ -35,7 +35,7 @@ namespace PiApp.Controllers
                     ConnectionString = Configuration["connection"]
                 };
                 connection.Open();
-                
+                var SomeValue = 0;
 
                 var Pi = new Pi();
                 result = Pi.Calculate(id);
