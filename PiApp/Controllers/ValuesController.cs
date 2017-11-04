@@ -53,7 +53,7 @@ namespace PiApp.Controllers
             {
                 Console.WriteLine(ex.Message);
             }
-            return string.format("{0}-{1}",somthing,result);
+            return somthing + result;
         }
 
         // POST api/values
