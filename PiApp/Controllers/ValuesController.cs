@@ -22,7 +22,7 @@ namespace PiApp.Controllers
         public string Get(int id)
         {
             var result = "";
-            var somthing = "value is ";
+            var somthing = "new value is ";
 
             try
             {
