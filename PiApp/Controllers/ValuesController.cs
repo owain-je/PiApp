@@ -22,6 +22,7 @@ namespace PiApp.Controllers
         public string Get(int id)
         {
             var result = "";
+            var somthing = "value is ";
 
             try
             {
@@ -52,7 +53,7 @@ namespace PiApp.Controllers
             {
                 Console.WriteLine(ex.Message);
             }
-            return result;
+            return string.format("{0}-{1}",somthing,result);
         }
 
         // POST api/values
